@@ -141,6 +141,7 @@ h3 {
 	border-radius: 3px;
 }
 
+li.try-nav-li-selected,
 .try-nav li:hover {
 	background: #aaa;
 	color: #333;

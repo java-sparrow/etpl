@@ -177,7 +177,9 @@
         }
     };
 
-    document.getElementById( 'try-nav' ).onclick = function ( e ) {
+    var tryNav = document.getElementById( 'try-nav' );
+    var tryNavLis = tryNav.children;
+    tryNav.onclick = function ( e ) {
         e = e || window.event;
         var target = e.srcElement || e.target;
 
@@ -189,6 +191,12 @@
                 dataText.value = tryCode.data;
                 tryRender();
             }
+            
+            //  处理选中的li，显式告知用户 当前的try-type
+            for (var i = 0, tryNavLi; tryNavLi = tryNavLis[i]; i++) {
+                tryNavLi.className = '';
+            }
+            target.className = 'try-nav-li-selected';
         }
     };
 })();
